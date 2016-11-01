@@ -1,4 +1,4 @@
-var socket = io.connect('https://qfdk2010.cozycloud.cc:9252');
+var socket = io.connect('https://localhost:9252');
 
 $('#download').click(function() {
     $.get("/download?url="+$("#url").val());
