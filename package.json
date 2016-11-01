@@ -1,0 +1,46 @@
+{
+  "name": "cozy-bittorrent",
+  "version": "1.0.0",
+  "description": "A client BitTorrent for cozy cloud.",
+  "main": "server.js",
+  "icon-path": "client/imgs/icon.gif",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qfdk/cozy-BitTorrent.git"
+  },
+  "keywords": [
+    "BitTorrent",
+    "cozycloud"
+  ],
+  "author": "qfdk",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/qfdk/cozy-BitTorrent/issues"
+  },
+  "homepage": "https://github.com/qfdk/cozy-BitTorrent#readme",
+  "dependencies": {
+    "express": "^4.14.0",
+    "socket.io": "^1.5.1",
+    "torrent-stream": "^1.0.3"
+  },
+  "cozy-permissions": {
+    "Download": {
+      "description": "Download and store files in your cozy"
+    },
+    "Notification": {
+      "description": "Send email and home notifications."
+    },
+    "File": {
+      "description": "Store your downloads into the Files app"
+    },
+    "Folder": {
+      "description": "Create a dedicated folder in Files app"
+    },
+    "User": {
+      "description": "The user's email and name."
+    }
+  }
+}
