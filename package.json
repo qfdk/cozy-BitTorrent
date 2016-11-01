@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "A client BitTorrent for cozy cloud.",
   "main": "server.js",
-  "icon-path": "client/imgs/icon.gif",
+  "icon-path": "./client/imgs/main_icon.png",
   "scripts": {
     "start": "node server.js"
   },
