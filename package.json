@@ -6,6 +6,7 @@
   "scripts": {
     "start": "node server.js"
   },
+  "icon-path": "client/imgs/main_icon.png",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/qfdk/cozy-BitTorrent.git"
