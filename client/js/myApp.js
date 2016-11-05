@@ -1,7 +1,7 @@
-var socket = io.connect('https://localhost:9252');
+var socket = io.connect('http://localhost:9250');
 
 $('#download').click(function() {
-    $.get("https://localhost:9252/download?url="+$("#url").val());
+    $.get("http://localhost:9250/download?url="+$("#url").val());
 });
 
 socket.on('data', function (data) {

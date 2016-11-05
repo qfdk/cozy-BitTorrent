@@ -16,22 +16,29 @@ router.get('/download', function (req, res, next) {
         var tmp = params['url'].toString();
         console.log("[info] Download URL: " + tmp);
         var engine = torrentStream(tmp);
-
+        var dir="sasa";
+        fs.mkdir(dir, function(err){
+        if(!err){
+            console.log("[info] dir created.");
+        }else{
+            console.log("[info] dir not created.");
+        }
+        });
         engine.on('ready', function () {
             engine.files.forEach(function (file) {
                 console.log('filename:', file.name);
                 var stream = file.createReadStream();
-                var output = fs.createWriteStream("./dir/" + file.name);
+                var output = fs.createWriteStream(dir+"/"+file.name);
                 var result = {
                     'msg': 'downloading',
-                    'process': file.length * 1.0
+                    'length': file.length * 1.0
                 }
                 res.io.sockets.emit('data', JSON.stringify(result));
                 stream.on('end', function () {
                     console.log('[info] ->' + file.name + "<- finished.");
                     var result = {
                         'msg': 'finish',
-                        'process': '100'
+                        'length': '...'
                     }
                     res.io.sockets.emit('data', JSON.stringify(result));
                 });
